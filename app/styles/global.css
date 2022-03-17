@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Alice&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alice&family=Lora&display=swap");
+
+:root {
+  --topbar-height: 10vh;
+  --cz-editorial-main-color: #d9e8e6;
+  --cz-editorial-secondary-color: #d5e6d5;
+  --alice-font: "Alice", serif;
+  --lora-font: "Lora", serif;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--lora-font);
+  background-color: rgb(251, 248, 243);
+}
+
+.hero-header {
+  font-family: var(--lora-font);
+  text-align: center;
+  margin-top: calc(50vh - var(--topbar-height));
+  font-size: 50px;
+}

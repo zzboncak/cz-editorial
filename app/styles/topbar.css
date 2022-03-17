@@ -1,0 +1,23 @@
+.site-header {
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  background-color: var(--cz-editorial-main-color);
+  height: var(--topbar-height);
+}
+
+.site-header ul {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 0;
+  margin: 0;
+  line-height: 1rem;
+  margin-top: calc((10vh - 1rem) / 2);
+}
+
+.site-header ul li {
+  font-family: var(--lora-font);
+  list-style: none;
+  text-align: center;
+  font-size: x-large;
+}
