@@ -10,15 +10,16 @@ import type { MetaFunction, ActionFunction } from "remix";
 import { sendEmail } from "./utils/mailer";
 
 export const meta: MetaFunction = () => {
-  return { title: "CZ Editorial" };
+  return { 
+    title: "CZ Editorial",
+    description: "Professional Copyediting and Proofreading"
+   };
 };
 
 export const action: ActionFunction = async ({ request }) => {
   let body = await request.formData();
   const email = body.get("email");
   const messageBody = body.get("messageBody");
-  console.log("email", email);
-  console.log("messageBody", messageBody);
   await sendEmail({
     email: email as string,
     messageBody: messageBody as string
