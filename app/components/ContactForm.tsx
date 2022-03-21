@@ -13,6 +13,8 @@ export default function ContactForm() {
         name="messageBody"
         id="message-body"
         placeholder="Dear Courtney..."
+        spellCheck="true"
+        autoCapitalize="sentences"
         required
       />
       <button type="submit">Email Me</button>
