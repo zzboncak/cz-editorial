@@ -1,18 +1,12 @@
-import { Link } from "remix";
+import { scrollToElement } from "~/utils/scrollToElement";
 
 export default function Topbar() {
   return (
     <nav className="site-header">
       <ul>
-        <Link to="#skills">
-          <li>Services</li>
-        </Link>
-        <Link to="#about">
-          <li>About</li>
-        </Link>
-        <Link to="#contact">
-          <li>Contact</li>
-        </Link>
+        <li className="link" onClick={() => scrollToElement("skills")}>Services</li>
+        <li className="link" onClick={() => scrollToElement("about")}>About</li>
+        <li className="link" onClick={() => scrollToElement("contact")}>Contact</li>
       </ul>
     </nav>
   );
