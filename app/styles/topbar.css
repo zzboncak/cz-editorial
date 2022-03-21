@@ -13,11 +13,32 @@
   margin: 0;
   line-height: 1rem;
   margin-top: calc((10vh - 1rem) / 2);
+  justify-content: space-around;
 }
 
-.site-header ul li {
+.site-header .link {
   font-family: var(--lora-font);
   list-style: none;
   text-align: center;
   font-size: x-large;
+  cursor: pointer;
+  position: relative; 
+}
+
+.site-header .link::after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  background: black;
+  width: 100%;
+  bottom: -5px;
+  left: 0;
+  transform-origin: 100% 50%;
+  transform: scale3d(0, 1, 1);
+  transition: 0.3s ease transform;
+}
+
+.site-header .link:hover::after {
+  transform-origin: 0% 50%;
+  transform: scale3d(1, 1, 1);
 }
