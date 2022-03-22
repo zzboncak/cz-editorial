@@ -74,6 +74,56 @@
   border: 1px black dotted;
 }
 
+.notification-container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.123);
+}
+
+.notification-message {
+  position: relative;
+  top: 20vh;
+  width: 30vw;
+  text-align: center;
+  border-radius: 16px;
+  margin: 0 auto;
+  padding: 20px 0;
+  border: 1px black dotted;
+  font-family: var(--lora-font);
+  font-size: 20px;
+}
+
+.notification-message.success {
+  background-color: #d5e6d5;
+}
+
+.notification-message.error {
+  background-color: #e6d7d5;
+}
+
+.exit-container {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  left: calc(30vw - 30px);
+  top: 10px;
+}
+
+.x-1 {
+  width: 20px;
+  border: 1px solid black;
+  transform: rotate(45deg) translate(5px, 5px);
+  position: absolute;
+}
+
+.x-2 {
+  width: 20px;
+  border: 1px solid black;
+  transform: rotate(135deg) translate(5px, -5px);
+  position: absolute;
+}
+
 @media screen and (max-width: 700px) {
   .skills {
     grid-template-columns: auto;

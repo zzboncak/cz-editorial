@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Form } from "remix";
 
 export default function ContactForm({
@@ -5,6 +6,14 @@ export default function ContactForm({
 }: {
   transitionState: "submitting" | "loading" | "idle";
 }) {
+  // If the value of transitionState changes to idle, clear the values
+  useEffect(() => {
+    if (transitionState === "idle") {
+      (document.getElementById("email") as HTMLInputElement).value = "";
+      (document.getElementById("message-body") as HTMLInputElement).value = "";
+    }
+  }, [transitionState]);
+
   return (
     <Form className="contact-form" id="contact" method="post">
       <h2>Let's get in touch</h2>
