@@ -6,25 +6,13 @@ import {
   Scripts,
   ScrollRestoration
 } from "remix";
-import type { MetaFunction, ActionFunction } from "remix";
-import { sendEmail } from "./utils/mailer";
+import type { MetaFunction } from "remix";
 
 export const meta: MetaFunction = () => {
   return { 
     title: "CZ Editorial",
     description: "Professional Copyediting and Proofreading"
    };
-};
-
-export const action: ActionFunction = async ({ request }) => {
-  let body = await request.formData();
-  const email = body.get("email");
-  const messageBody = body.get("messageBody");
-  await sendEmail({
-    email: email as string,
-    messageBody: messageBody as string
-  });
-  return null;
 };
 
 export default function App() {

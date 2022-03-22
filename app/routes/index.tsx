@@ -2,9 +2,11 @@ import Topbar from "~/components/Topbar";
 import globalStyles from "~/styles/global.css";
 import topbarStyles from "~/styles/topbar.css";
 import landingStyles from "~/styles/landing.css";
-import type { LinksFunction } from "remix";
+import { useTransition } from "remix";
+import type { LinksFunction, ActionFunction } from "remix";
 import CZEditorialLogo from "~/images/cz-editorial.svg";
 import ContactForm from "~/components/ContactForm";
+import { sendEmail } from "~/utils/mailer";
 
 export const links: LinksFunction = () => {
   return [
@@ -44,7 +46,20 @@ export const links: LinksFunction = () => {
   ];
 };
 
+export const action: ActionFunction = async ({ request }) => {
+  let body = await request.formData();
+  const email = body.get("email");
+  const messageBody = body.get("messageBody");
+  await sendEmail({
+    email: email as string,
+    messageBody: messageBody as string
+  });
+  return null;
+};
+
 export default function Index() {
+  const transition = useTransition();
+
   return (
     <main style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
       <Topbar />
@@ -67,7 +82,7 @@ export default function Index() {
         </p>
       </section>
       <section>
-        <ContactForm />
+        <ContactForm transitionState={transition.state} />
       </section>
     </main>
   );
