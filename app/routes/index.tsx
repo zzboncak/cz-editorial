@@ -56,14 +56,14 @@ export default function Index() {
       </section>
       <section className="about-me" id="about">
         <h2>Hi, my name is Courtney</h2>
-        <p>And I'm here to make sure your work looks its best</p>
+        <p>And I'm here to make sure your work looks its best.</p>
         <p>
           I have a B.S. in Biblical & Theological Studies from Wheaton College
           and a M.A. in Theology from Talbot School of Theology.
         </p>
         <p>
           I have years of experience working with biblical scholars from working
-          in the Ph.D. office at Wheaton College
+          in the Ph.D. office at Wheaton College.
         </p>
       </section>
       <section>
