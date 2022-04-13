@@ -17,25 +17,26 @@ export async function sendEmail(options: {
 }) {
   const testAccount = await nodemailer.createTestAccount();
   // Just use a test account when in development
-  const account = process.env.NODE_ENV === "development" 
-  ? nodemailer.createTransport({
-      host: "smtp.ethereal.email",
-      port: 587,
-      secure: false, // true for 465, false for other ports
-      auth: {
-        user: testAccount.user, // generated ethereal user
-        pass: testAccount.pass, // generated ethereal password
-      },
-    })
-  : nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: parseInt(process.env.SMTP_PORT!),
-      secure: false,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS
-      }
-    });
+  const account =
+    process.env.NODE_ENV === "development"
+      ? nodemailer.createTransport({
+          host: "smtp.ethereal.email",
+          port: 587,
+          secure: false, // true for 465, false for other ports
+          auth: {
+            user: testAccount.user, // generated ethereal user
+            pass: testAccount.pass // generated ethereal password
+          }
+        })
+      : nodemailer.createTransport({
+          host: process.env.SMTP_HOST,
+          port: 587,
+          secure: false,
+          auth: {
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS
+          }
+        });
 
   return await account.sendMail({
     to: process.env.SMTP_USER,
