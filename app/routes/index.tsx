@@ -14,37 +14,37 @@ export const links: LinksFunction = () => {
   return [
     {
       rel: "stylesheet",
-      href: topbarStyles,
+      href: topbarStyles
     },
     {
       rel: "stylesheet",
-      href: globalStyles,
+      href: globalStyles
     },
     {
       rel: "stylesheet",
-      href: landingStyles,
+      href: landingStyles
     },
     {
       rel: "apple-touch-icon",
       sizes: "180x180",
-      href: "/apple-touch-icon.png",
+      href: "/apple-touch-icon.png"
     },
     {
       rel: "icon",
       type: "image/png",
       sizes: "32x32",
-      href: "/favicon-32x32.png",
+      href: "/favicon-32x32.png"
     },
     {
       rel: "icon",
       type: "image/png",
       sizes: "16x16",
-      href: "/favicon-16x16.png",
+      href: "/favicon-16x16.png"
     },
     {
       rel: "manifest",
-      href: "/site.webmanifest",
-    },
+      href: "/site.webmanifest"
+    }
   ];
 };
 
@@ -55,7 +55,7 @@ export const action: ActionFunction = async ({ request }) => {
   try {
     const result = await sendEmail({
       email: email as string,
-      messageBody: messageBody as string,
+      messageBody: messageBody as string
     });
     return result;
   } catch (error) {
@@ -73,7 +73,7 @@ export default function Index() {
   const [notificationMessage, setNotificationMessage] =
     useState<NotificationProps>({
       type: "success",
-      message: "Your email was sent!",
+      message: "Your email was sent!"
     });
   const transition = useTransition();
   const data = useActionData();
@@ -85,7 +85,7 @@ export default function Index() {
       setNotificationMessage({
         type: "error",
         message:
-          "There was an error when attempting to submit the form, please try again.",
+          "There was an error when attempting to submit the form, please try again."
       });
     }
   }, [data]);

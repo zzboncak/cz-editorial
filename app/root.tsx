@@ -9,10 +9,11 @@ import {
 import type { MetaFunction } from "remix";
 
 export const meta: MetaFunction = () => {
-  return { 
+  return {
     title: "CZ Editorial",
-    description: "Professional Copyediting and Proofreading"
-   };
+    description: "Professional Copyediting and Proofreading",
+    "theme-color": "#d9e8e6"
+  };
 };
 
 export default function App() {
