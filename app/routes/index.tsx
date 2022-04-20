@@ -121,23 +121,22 @@ export default function Index() {
       </ReactVisibilitySensor>
       <section className="about-me" id="about">
         <h2>Hi, my name is Courtney Zboncak.</h2>
-        <p>And I'm here to make sure your work looks its best.</p>
+        <p>I'm here to make sure your work looks its best.</p>
         <p>
           Whether your work needs copyediting, proofreading, or indexing, I can
-          help. Maybe you need help researching a topic? I can do that too.
+          help. Maybe you need help researching a topic? I can do that, too.
         </p>
         <p>
-          I have a B.A. in Biblical & Theological Studies from Wheaton College
-          and a M.A. in Theology from Talbot School of Theology.
+          I specialize in the subjects of biblical & theological studies, with a
+          B.A. from Wheaton College and a M.A. in Theology from Biola
+          University's Talbot School of Theology.
         </p>
         <p>
-          I have years of experience working with biblical scholars from working
-          in the Ph.D. office at Wheaton College.
+          I have several years of experience working with biblical scholars in
+          higher education, and I bring a detailed eye to written work at any
+          stage of the publication process.
         </p>
-        <p>
-          Contact me for pricing and details to see if my services can help get
-          your project across the finish line.
-        </p>
+        <p>Contact me for pricing and details.</p>
       </section>
       <section>
         <ContactForm transitionState={transition.state} />
