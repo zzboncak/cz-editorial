@@ -127,12 +127,16 @@ export default function Index() {
           help. Maybe you need help researching a topic? I can do that too.
         </p>
         <p>
-          I have a B.S. in Biblical & Theological Studies from Wheaton College
+          I have a B.A. in Biblical & Theological Studies from Wheaton College
           and a M.A. in Theology from Talbot School of Theology.
         </p>
         <p>
           I have years of experience working with biblical scholars from working
           in the Ph.D. office at Wheaton College.
+        </p>
+        <p>
+          Contact me for pricing and details to see if my services can help get
+          your project across the finish line.
         </p>
       </section>
       <section>
