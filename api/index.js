@@ -378,8 +378,7 @@ var import_remix2 = __toESM(require_remix());
 var meta = () => {
   return {
     title: "CZ Editorial",
-    description: "Professional Copyediting and Proofreading",
-    "theme-color": "#d9e8e6"
+    description: "Professional Copyediting and Proofreading"
   };
 };
 function App() {
@@ -390,6 +389,14 @@ function App() {
   }), /* @__PURE__ */ React.createElement("meta", {
     name: "viewport",
     content: "width=device-width,initial-scale=1"
+  }), /* @__PURE__ */ React.createElement("meta", {
+    name: "theme-color",
+    content: "#d9e8e6",
+    media: "(prefers-color-scheme: dark)"
+  }), /* @__PURE__ */ React.createElement("meta", {
+    name: "theme-color",
+    content: "#d9e8e6",
+    media: "(prefers-color-scheme: light)"
   }), /* @__PURE__ */ React.createElement(import_remix2.Meta, null), /* @__PURE__ */ React.createElement(import_remix2.Links, null)), /* @__PURE__ */ React.createElement("body", null, /* @__PURE__ */ React.createElement(import_remix2.Outlet, null), /* @__PURE__ */ React.createElement(import_remix2.ScrollRestoration, null), /* @__PURE__ */ React.createElement(import_remix2.Scripts, null), /* @__PURE__ */ React.createElement(import_remix2.LiveReload, null)));
 }
 
@@ -452,7 +459,7 @@ var global_default = "/build/_assets/global-AAQA4Q6G.css";
 var topbar_default = "/build/_assets/topbar-ZZJL7OFN.css";
 
 // app/styles/landing.css
-var landing_default = "/build/_assets/landing-2R2YEO32.css";
+var landing_default = "/build/_assets/landing-PWY67FYS.css";
 
 // route:/Users/zacharyzboncak/Desktop/Projects/cz-editorial/app/routes/index.tsx
 var import_remix4 = __toESM(require_remix());
@@ -537,7 +544,7 @@ async function sendEmail(options) {
 }
 
 // route:/Users/zacharyzboncak/Desktop/Projects/cz-editorial/app/routes/index.tsx
-var import_react3 = require("react");
+var import_react4 = require("react");
 
 // app/components/Notification.tsx
 init_react();
@@ -565,6 +572,80 @@ function Notification({
   }), /* @__PURE__ */ React.createElement("div", {
     className: "x-2"
   })), /* @__PURE__ */ React.createElement("p", null, message)));
+}
+
+// route:/Users/zacharyzboncak/Desktop/Projects/cz-editorial/app/routes/index.tsx
+var import_react_visibility_sensor = __toESM(require("react-visibility-sensor"));
+
+// app/components/Skill.tsx
+init_react();
+var import_react3 = require("react");
+function reducer(state, action2) {
+  switch (action2.type) {
+    case "START_TYPING":
+      return __spreadProps(__spreadValues({}, state), {
+        typing: true
+      });
+    case "STOP_TYPING":
+      return __spreadProps(__spreadValues({}, state), {
+        typing: false
+      });
+    case "SET_TEXT":
+      return __spreadProps(__spreadValues({}, state), {
+        textToDisplay: action2.payload
+      });
+    case "SET_NEXT_INDEX":
+      return __spreadProps(__spreadValues({}, state), {
+        nextIndex: action2.payload
+      });
+    case "SET_STATE":
+      return action2.payload;
+    default:
+      return state;
+  }
+}
+function Skill({
+  text,
+  delay,
+  isVisible
+}) {
+  const textArray = text.split("");
+  const initialState = {
+    textToDisplay: "",
+    nextIndex: 1,
+    typing: false
+  };
+  const [state, dispatch] = (0, import_react3.useReducer)(reducer, initialState);
+  (0, import_react3.useEffect)(() => {
+    if (state.nextIndex === 1 && isVisible) {
+      for (let i = 0; i <= textArray.length; i++) {
+        setTimeout(() => {
+          if (i !== textArray.length) {
+            dispatch({
+              type: "SET_STATE",
+              payload: {
+                textToDisplay: textArray.slice(0, i).join(""),
+                nextIndex: state.nextIndex + 1,
+                typing: true
+              }
+            });
+          } else if (i === textArray.length) {
+            dispatch({
+              type: "SET_STATE",
+              payload: {
+                textToDisplay: textArray.slice(0, i).join(""),
+                nextIndex: state.nextIndex + 1,
+                typing: false
+              }
+            });
+          }
+        }, delay + i * 110);
+      }
+    }
+  }, [isVisible, state.nextIndex, textArray, delay]);
+  return /* @__PURE__ */ React.createElement("p", {
+    className: `skill${state.typing ? " typing" : ""}`
+  }, state.textToDisplay);
 }
 
 // route:/Users/zacharyzboncak/Desktop/Projects/cz-editorial/app/routes/index.tsx
@@ -620,14 +701,14 @@ var action = async ({ request }) => {
   }
 };
 function Index() {
-  const [displayNotification, setDisplayNotification] = (0, import_react3.useState)(false);
-  const [notificationMessage, setNotificationMessage] = (0, import_react3.useState)({
+  const [displayNotification, setDisplayNotification] = (0, import_react4.useState)(false);
+  const [notificationMessage, setNotificationMessage] = (0, import_react4.useState)({
     type: "success",
     message: "Your email was sent!"
   });
   const transition = (0, import_remix4.useTransition)();
   const data = (0, import_remix4.useActionData)();
-  (0, import_react3.useEffect)(() => {
+  (0, import_react4.useEffect)(() => {
     if (data && data.accepted) {
       setDisplayNotification(true);
     } else if (data && !data.accepted) {
@@ -646,10 +727,26 @@ function Index() {
     src: cz_editorial_default,
     alt: "CZ Editorial Logo",
     className: "cz-logo"
+  }), /* @__PURE__ */ React.createElement(import_react_visibility_sensor.default, null, ({ isVisible }) => {
+    return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("section", {
+      className: "skills",
+      id: "skills"
+    }, /* @__PURE__ */ React.createElement(Skill, {
+      text: "Proofreading",
+      delay: 0,
+      isVisible
+    }), /* @__PURE__ */ React.createElement(Skill, {
+      text: "Copyediting",
+      delay: 1600,
+      isVisible
+    }), /* @__PURE__ */ React.createElement(Skill, {
+      text: "Researching",
+      delay: 3400,
+      isVisible
+    }), /* @__PURE__ */ React.createElement("div", {
+      className: "cursor"
+    })));
   }), /* @__PURE__ */ React.createElement("section", {
-    className: "skills",
-    id: "skills"
-  }, /* @__PURE__ */ React.createElement("p", null, "Proofreading"), /* @__PURE__ */ React.createElement("p", null, "Copyediting"), /* @__PURE__ */ React.createElement("p", null, "Researching")), /* @__PURE__ */ React.createElement("section", {
     className: "about-me",
     id: "about"
   }, /* @__PURE__ */ React.createElement("h2", null, "Hi, my name is Courtney"), /* @__PURE__ */ React.createElement("p", null, "And I'm here to make sure your work looks its best."), /* @__PURE__ */ React.createElement("p", null, "I have a B.S. in Biblical & Theological Studies from Wheaton College and a M.A. in Theology from Talbot School of Theology."), /* @__PURE__ */ React.createElement("p", null, "I have years of experience working with biblical scholars from working in the Ph.D. office at Wheaton College.")), /* @__PURE__ */ React.createElement("section", null, /* @__PURE__ */ React.createElement(ContactForm, {
@@ -659,7 +756,7 @@ function Index() {
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
 init_react();
-var assets_manifest_default = { "version": "57045edc", "entry": { "module": "/build/entry.client-SW43V6V2.js", "imports": ["/build/_shared/chunk-ERMYNWJS.js", "/build/_shared/chunk-6BO74FWO.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-WXO5XMWE.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/[sitemap.xml]": { "id": "routes/[sitemap.xml]", "parentId": "root", "path": "sitemap.xml", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/[sitemap.xml]-WA7EUYXI.js", "imports": void 0, "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-GWXVJ3UY.js", "imports": void 0, "hasAction": true, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-57045EDC.js" };
+var assets_manifest_default = { "version": "354ed9c7", "entry": { "module": "/build/entry.client-LE2DIIAM.js", "imports": ["/build/_shared/chunk-SXNYENQH.js", "/build/_shared/chunk-ERMYNWJS.js", "/build/_shared/chunk-6BO74FWO.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-3HH5OROP.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/[sitemap.xml]": { "id": "routes/[sitemap.xml]", "parentId": "root", "path": "sitemap.xml", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/[sitemap.xml]-WA7EUYXI.js", "imports": void 0, "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-NXKELK2J.js", "imports": void 0, "hasAction": true, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-354ED9C7.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var entry = { module: entry_server_exports };
