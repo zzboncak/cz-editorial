@@ -600,6 +600,10 @@ function reducer(state, action2) {
       });
     case "SET_STATE":
       return action2.payload;
+    case "SET_STARTED":
+      return __spreadProps(__spreadValues({}, state), {
+        started: action2.payload
+      });
     default:
       return state;
   }
@@ -613,11 +617,13 @@ function Skill({
   const initialState = {
     textToDisplay: "",
     nextIndex: 1,
-    typing: false
+    typing: false,
+    started: false
   };
   const [state, dispatch] = (0, import_react3.useReducer)(reducer, initialState);
   (0, import_react3.useEffect)(() => {
-    if (state.nextIndex === 1 && isVisible) {
+    if (state.nextIndex === 1 && isVisible && !state.started) {
+      dispatch({ type: "SET_STARTED", payload: true });
       for (let i = 0; i <= textArray.length; i++) {
         setTimeout(() => {
           if (i !== textArray.length) {
@@ -642,7 +648,7 @@ function Skill({
         }, delay + i * 110);
       }
     }
-  }, [isVisible, state.nextIndex, textArray, delay]);
+  }, [isVisible, state.nextIndex, textArray, delay, state.started]);
   return /* @__PURE__ */ React.createElement("p", {
     className: `skill${state.typing ? " typing" : ""}`
   }, state.textToDisplay);
@@ -756,7 +762,7 @@ function Index() {
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
 init_react();
-var assets_manifest_default = { "version": "354ed9c7", "entry": { "module": "/build/entry.client-LE2DIIAM.js", "imports": ["/build/_shared/chunk-SXNYENQH.js", "/build/_shared/chunk-ERMYNWJS.js", "/build/_shared/chunk-6BO74FWO.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-3HH5OROP.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/[sitemap.xml]": { "id": "routes/[sitemap.xml]", "parentId": "root", "path": "sitemap.xml", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/[sitemap.xml]-WA7EUYXI.js", "imports": void 0, "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-NXKELK2J.js", "imports": void 0, "hasAction": true, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-354ED9C7.js" };
+var assets_manifest_default = { "version": "a9cf30d5", "entry": { "module": "/build/entry.client-F4X7NALO.js", "imports": ["/build/_shared/chunk-SXNYENQH.js", "/build/_shared/chunk-6QOPOAPS.js", "/build/_shared/chunk-6BO74FWO.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-A7XXXWTP.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/[sitemap.xml]": { "id": "routes/[sitemap.xml]", "parentId": "root", "path": "sitemap.xml", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/[sitemap.xml]-WA7EUYXI.js", "imports": void 0, "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-GH2RF6HW.js", "imports": void 0, "hasAction": true, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-A9CF30D5.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var entry = { module: entry_server_exports };
