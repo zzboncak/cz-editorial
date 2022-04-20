@@ -146,3 +146,14 @@
   content: "|";
   animation: flash cubic-bezier(0, 1.57, 0, 0.98) 0.7s infinite;
 }
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+footer img {
+  height: 70px;
+}

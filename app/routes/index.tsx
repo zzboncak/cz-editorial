@@ -11,6 +11,8 @@ import { useEffect, useState } from "react";
 import Notification from "~/components/Notification";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import { Skill } from "~/components/Skill";
+import LILogo from "~/images/LI-In-Bug.png";
+import emailIcon from "~/images/email.png";
 
 export const links: LinksFunction = () => {
   return [
@@ -118,8 +120,12 @@ export default function Index() {
         }}
       </ReactVisibilitySensor>
       <section className="about-me" id="about">
-        <h2>Hi, my name is Courtney</h2>
+        <h2>Hi, my name is Courtney Zboncak</h2>
         <p>And I'm here to make sure your work looks its best.</p>
+        <p>
+          Whether your work needs copyediting, proofreading, or indexing, I can
+          help. Maybe you need help researching a topic? I can do that too.
+        </p>
         <p>
           I have a B.S. in Biblical & Theological Studies from Wheaton College
           and a M.A. in Theology from Talbot School of Theology.
@@ -132,6 +138,18 @@ export default function Index() {
       <section>
         <ContactForm transitionState={transition.state} />
       </section>
+      <footer>
+        <a
+          href="https://www.linkedin.com/in/courtney-zboncak-721431206/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={LILogo} alt="Linked in Logo" />
+        </a>
+        <a href="mailto:courtney@czeditorial.com">
+          <img src={emailIcon} alt="Email Me" />
+        </a>
+      </footer>
     </main>
   );
 }
