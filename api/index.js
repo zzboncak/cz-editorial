@@ -382,6 +382,11 @@ var meta = () => {
   };
 };
 function App() {
+  console.log("%c Hey there \u{1F44B}", "font-size: 30px;");
+  console.log(`%c If you're reading this, you probably know a thing or two about web development. 
+    My name is Zack Zboncak, and I built this site for my wife, who is a boss copyeditor and proofreader. 
+    If you ever want to talk web development, or have any web development needs, feel free to reach out to me at zachary.zboncak@gmail.com.
+    You can find me on Twitter at @zzdevelops, and on GitHub at https://github.com/zzboncak.`, "line-height: 1.5; font-size: 16px;");
   return /* @__PURE__ */ React.createElement("html", {
     lang: "en"
   }, /* @__PURE__ */ React.createElement("head", null, /* @__PURE__ */ React.createElement("meta", {
@@ -761,7 +766,7 @@ function Index() {
   }), /* @__PURE__ */ React.createElement("section", {
     className: "about-me",
     id: "about"
-  }, /* @__PURE__ */ React.createElement("h2", null, "Hi, my name is Courtney Zboncak"), /* @__PURE__ */ React.createElement("p", null, "And I'm here to make sure your work looks its best."), /* @__PURE__ */ React.createElement("p", null, "Whether your work needs copyediting, proofreading, or indexing, I can help. Maybe you need help researching a topic? I can do that too."), /* @__PURE__ */ React.createElement("p", null, "I have a B.A. in Biblical & Theological Studies from Wheaton College and a M.A. in Theology from Talbot School of Theology."), /* @__PURE__ */ React.createElement("p", null, "I have years of experience working with biblical scholars from working in the Ph.D. office at Wheaton College."), /* @__PURE__ */ React.createElement("p", null, "Contact me for pricing and details to see if my services can help get your project across the finish line.")), /* @__PURE__ */ React.createElement("section", null, /* @__PURE__ */ React.createElement(ContactForm, {
+  }, /* @__PURE__ */ React.createElement("h2", null, "Hi, my name is Courtney Zboncak."), /* @__PURE__ */ React.createElement("p", null, "And I'm here to make sure your work looks its best."), /* @__PURE__ */ React.createElement("p", null, "Whether your work needs copyediting, proofreading, or indexing, I can help. Maybe you need help researching a topic? I can do that too."), /* @__PURE__ */ React.createElement("p", null, "I have a B.A. in Biblical & Theological Studies from Wheaton College and a M.A. in Theology from Talbot School of Theology."), /* @__PURE__ */ React.createElement("p", null, "I have years of experience working with biblical scholars from working in the Ph.D. office at Wheaton College."), /* @__PURE__ */ React.createElement("p", null, "Contact me for pricing and details to see if my services can help get your project across the finish line.")), /* @__PURE__ */ React.createElement("section", null, /* @__PURE__ */ React.createElement(ContactForm, {
     transitionState: transition.state
   })), /* @__PURE__ */ React.createElement("footer", null, /* @__PURE__ */ React.createElement("a", {
     href: "https://www.linkedin.com/in/courtney-zboncak-721431206/",
@@ -780,7 +785,7 @@ function Index() {
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
 init_react();
-var assets_manifest_default = { "version": "d7811c98", "entry": { "module": "/build/entry.client-LE2DIIAM.js", "imports": ["/build/_shared/chunk-SXNYENQH.js", "/build/_shared/chunk-ERMYNWJS.js", "/build/_shared/chunk-6BO74FWO.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-3HH5OROP.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/[sitemap.xml]": { "id": "routes/[sitemap.xml]", "parentId": "root", "path": "sitemap.xml", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/[sitemap.xml]-WA7EUYXI.js", "imports": void 0, "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-33ATQU7D.js", "imports": void 0, "hasAction": true, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-D7811C98.js" };
+var assets_manifest_default = { "version": "8abc4a1b", "entry": { "module": "/build/entry.client-LE2DIIAM.js", "imports": ["/build/_shared/chunk-SXNYENQH.js", "/build/_shared/chunk-ERMYNWJS.js", "/build/_shared/chunk-6BO74FWO.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-ILCSDJUS.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/[sitemap.xml]": { "id": "routes/[sitemap.xml]", "parentId": "root", "path": "sitemap.xml", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/[sitemap.xml]-WA7EUYXI.js", "imports": void 0, "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-GAE5Z4KT.js", "imports": void 0, "hasAction": true, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-8ABC4A1B.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var entry = { module: entry_server_exports };

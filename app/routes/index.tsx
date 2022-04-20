@@ -120,7 +120,7 @@ export default function Index() {
         }}
       </ReactVisibilitySensor>
       <section className="about-me" id="about">
-        <h2>Hi, my name is Courtney Zboncak</h2>
+        <h2>Hi, my name is Courtney Zboncak.</h2>
         <p>And I'm here to make sure your work looks its best.</p>
         <p>
           Whether your work needs copyediting, proofreading, or indexing, I can
