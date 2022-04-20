@@ -769,18 +769,18 @@ function Index() {
     rel: "noreferrer"
   }, /* @__PURE__ */ React.createElement("img", {
     src: LI_In_Bug_default,
-    alt: "Linked in Logo"
+    alt: "Linked In Logo"
   })), /* @__PURE__ */ React.createElement("a", {
     href: "mailto:courtney@czeditorial.com"
   }, /* @__PURE__ */ React.createElement("img", {
     src: email_default,
-    alt: "Email Me"
+    alt: "Email Icon"
   }))));
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
 init_react();
-var assets_manifest_default = { "version": "ca86ad26", "entry": { "module": "/build/entry.client-LE2DIIAM.js", "imports": ["/build/_shared/chunk-SXNYENQH.js", "/build/_shared/chunk-ERMYNWJS.js", "/build/_shared/chunk-6BO74FWO.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-3HH5OROP.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/[sitemap.xml]": { "id": "routes/[sitemap.xml]", "parentId": "root", "path": "sitemap.xml", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/[sitemap.xml]-WA7EUYXI.js", "imports": void 0, "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-ILWXTY2Q.js", "imports": void 0, "hasAction": true, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-CA86AD26.js" };
+var assets_manifest_default = { "version": "725b9160", "entry": { "module": "/build/entry.client-LE2DIIAM.js", "imports": ["/build/_shared/chunk-SXNYENQH.js", "/build/_shared/chunk-ERMYNWJS.js", "/build/_shared/chunk-6BO74FWO.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-3HH5OROP.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/[sitemap.xml]": { "id": "routes/[sitemap.xml]", "parentId": "root", "path": "sitemap.xml", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/[sitemap.xml]-WA7EUYXI.js", "imports": void 0, "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-KC6QCXFQ.js", "imports": void 0, "hasAction": true, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-725B9160.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var entry = { module: entry_server_exports };

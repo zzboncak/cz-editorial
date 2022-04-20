@@ -144,10 +144,10 @@ export default function Index() {
           target="_blank"
           rel="noreferrer"
         >
-          <img src={LILogo} alt="Linked in Logo" />
+          <img src={LILogo} alt="Linked In Logo" />
         </a>
         <a href="mailto:courtney@czeditorial.com">
-          <img src={emailIcon} alt="Email Me" />
+          <img src={emailIcon} alt="Email Icon" />
         </a>
       </footer>
     </main>
