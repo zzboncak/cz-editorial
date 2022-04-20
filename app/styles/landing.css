@@ -12,7 +12,7 @@
   font-family: var(--lora-font);
   font-size: xx-large;
   margin: 300px auto;
-  padding-top: 40vh;
+  padding-top: 30vh;
 }
 
 .about-me {
@@ -127,6 +127,10 @@
 @media screen and (max-width: 700px) {
   .skills {
     grid-template-columns: auto;
+  }
+
+  .about-me {
+    padding-top: 20vh;
   }
 }
 
