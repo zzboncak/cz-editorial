@@ -80,7 +80,7 @@ export function Skill({
     }
   }, [isVisible, state.nextIndex, textArray, delay]);
   return (
-    <p className={`skill ${text} ${state.typing ? "typing" : ""}`}>
+    <p className={`skill${state.typing ? " typing" : ""}`}>
       {state.textToDisplay}
     </p>
   );
