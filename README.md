@@ -1,53 +1,27 @@
-# Welcome to Remix!
+# CZ Editorial
 
-- [Remix Docs](https://remix.run/docs)
+The repository for CZ Editorial's website.
+
+This website is built with:
+- [Remix](https://remix.run/docs)
 
 ## Development
 
-From your terminal:
+To contribute to this repository:
 
 ```sh
+git clone git@github.com:zzboncak/cz-editorial.git
+cd cz-editorial
+npm install
 npm run dev
 ```
 
-This starts your app in development mode, rebuilding assets on file changes.
+Please work off of a clean branch, and never work on `main` directly.
 
 ## Deployment
 
-First, build your app for production:
+This repository deploys to Vercel from the main branch. Any commit to `main` will automatically deploy to production.
 
-```sh
-npm run build
-```
+## Services
 
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/`
-- `public/build/`
-
-### Using a Template
-
-When you ran `npx create-remix@latest` there were a few choices for hosting. You can run that again to create a new project, then copy over your `app/` folder to the new project that's pre-configured for your target server.
-
-```sh
-cd ..
-# create a new project, and pick a pre-configured host
-npx create-remix@latest
-cd my-new-remix-app
-# remove the new project's app (not the old one!)
-rm -rf app
-# copy your app over
-cp -R ../my-old-remix-app/app app
-```
+CZ Editorial is a service that offers copyediting and proofreading of any text. If you are interested in using this service, please contact Courtney Zboncak at [courtney@czeditorial.com](mailto:courtney@czeditorial.com).
