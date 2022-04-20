@@ -129,3 +129,20 @@
     grid-template-columns: auto;
   }
 }
+
+@keyframes flash {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.typing::after {
+  content: "|";
+  animation: flash cubic-bezier(0, 1.57, 0, 0.98) 0.7s infinite;
+}

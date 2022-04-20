@@ -9,6 +9,8 @@ import ContactForm from "~/components/ContactForm";
 import { sendEmail } from "~/utils/mailer";
 import { useEffect, useState } from "react";
 import Notification from "~/components/Notification";
+import ReactVisibilitySensor from "react-visibility-sensor";
+import { Skill } from "~/components/Skill";
 
 export const links: LinksFunction = () => {
   return [
@@ -89,6 +91,7 @@ export default function Index() {
       });
     }
   }, [data]);
+
   return (
     <main style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
       {displayNotification && (
@@ -99,11 +102,21 @@ export default function Index() {
       )}
       <Topbar />
       <img src={CZEditorialLogo} alt="CZ Editorial Logo" className="cz-logo" />
-      <section className="skills" id="skills">
-        <p>Proofreading</p>
-        <p>Copyediting</p>
-        <p>Researching</p>
-      </section>
+      {/** To delay until visible */}
+      <ReactVisibilitySensor>
+        {({ isVisible }) => {
+          return (
+            <>
+              <section className="skills" id="skills">
+                <Skill text="Proofreading" delay={0} isVisible={isVisible} />
+                <Skill text="Copyediting" delay={1600} isVisible={isVisible} />
+                <Skill text="Researching" delay={3400} isVisible={isVisible} />
+                <div className="cursor"></div>
+              </section>
+            </>
+          );
+        }}
+      </ReactVisibilitySensor>
       <section className="about-me" id="about">
         <h2>Hi, my name is Courtney</h2>
         <p>And I'm here to make sure your work looks its best.</p>
