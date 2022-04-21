@@ -10,8 +10,9 @@ import type { MetaFunction } from "remix";
 
 export const meta: MetaFunction = () => {
   return {
-    title: "CZ Editorial",
-    description: "Professional Copyediting and Proofreading"
+    title: "CZ Editorial - Freelance Copyeditor and Proofreader",
+    description:
+      "Professional Copyediting and Proofreading services by Courtney Zboncak"
   };
 };
 

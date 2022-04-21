@@ -377,8 +377,8 @@ init_react();
 var import_remix2 = __toESM(require_remix());
 var meta = () => {
   return {
-    title: "CZ Editorial",
-    description: "Professional Copyediting and Proofreading"
+    title: "CZ Editorial - Freelance Copyeditor and Proofreader",
+    description: "Professional Copyediting and Proofreading services by Courtney Zboncak"
   };
 };
 function App() {
@@ -785,7 +785,7 @@ function Index() {
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
 init_react();
-var assets_manifest_default = { "version": "2e9db00f", "entry": { "module": "/build/entry.client-LE2DIIAM.js", "imports": ["/build/_shared/chunk-SXNYENQH.js", "/build/_shared/chunk-ERMYNWJS.js", "/build/_shared/chunk-6BO74FWO.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-ILCSDJUS.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/[sitemap.xml]": { "id": "routes/[sitemap.xml]", "parentId": "root", "path": "sitemap.xml", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/[sitemap.xml]-WA7EUYXI.js", "imports": void 0, "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-WERTG5J4.js", "imports": void 0, "hasAction": true, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-2E9DB00F.js" };
+var assets_manifest_default = { "version": "3e0c038a", "entry": { "module": "/build/entry.client-LE2DIIAM.js", "imports": ["/build/_shared/chunk-SXNYENQH.js", "/build/_shared/chunk-ERMYNWJS.js", "/build/_shared/chunk-6BO74FWO.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-2H7G7DHE.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/[sitemap.xml]": { "id": "routes/[sitemap.xml]", "parentId": "root", "path": "sitemap.xml", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/[sitemap.xml]-WA7EUYXI.js", "imports": void 0, "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-WERTG5J4.js", "imports": void 0, "hasAction": true, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-3E0C038A.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var entry = { module: entry_server_exports };
