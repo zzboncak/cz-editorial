@@ -382,6 +382,11 @@ var meta = () => {
   };
 };
 function App() {
+  console.log("%c Hey there \u{1F44B}", "font-size: 30px;");
+  console.log(`%c If you're reading this, you probably know a thing or two about web development. 
+    My name is Zack Zboncak, and I built this site for my wife, who is a boss copyeditor and proofreader. 
+    If you ever want to talk web development, or have any web development needs, feel free to reach out to me at zachary.zboncak@gmail.com.
+    You can find me on Twitter at @zzdevelops, and on GitHub at https://github.com/zzboncak.`, "line-height: 1.5; font-size: 16px;");
   return /* @__PURE__ */ React.createElement("html", {
     lang: "en"
   }, /* @__PURE__ */ React.createElement("head", null, /* @__PURE__ */ React.createElement("meta", {
@@ -459,7 +464,7 @@ var global_default = "/build/_assets/global-AAQA4Q6G.css";
 var topbar_default = "/build/_assets/topbar-ZZJL7OFN.css";
 
 // app/styles/landing.css
-var landing_default = "/build/_assets/landing-PWY67FYS.css";
+var landing_default = "/build/_assets/landing-KULQEQKV.css";
 
 // route:/Users/zacharyzboncak/Desktop/Projects/cz-editorial/app/routes/index.tsx
 var import_remix4 = __toESM(require_remix());
@@ -654,6 +659,12 @@ function Skill({
   }, state.textToDisplay);
 }
 
+// app/images/LI-In-Bug.png
+var LI_In_Bug_default = "/build/_assets/LI-In-Bug-KDAURRRT.png";
+
+// app/images/email.png
+var email_default = "/build/_assets/email-3EXVHIS4.png";
+
 // route:/Users/zacharyzboncak/Desktop/Projects/cz-editorial/app/routes/index.tsx
 var links = () => {
   return [
@@ -755,14 +766,26 @@ function Index() {
   }), /* @__PURE__ */ React.createElement("section", {
     className: "about-me",
     id: "about"
-  }, /* @__PURE__ */ React.createElement("h2", null, "Hi, my name is Courtney"), /* @__PURE__ */ React.createElement("p", null, "And I'm here to make sure your work looks its best."), /* @__PURE__ */ React.createElement("p", null, "I have a B.S. in Biblical & Theological Studies from Wheaton College and a M.A. in Theology from Talbot School of Theology."), /* @__PURE__ */ React.createElement("p", null, "I have years of experience working with biblical scholars from working in the Ph.D. office at Wheaton College.")), /* @__PURE__ */ React.createElement("section", null, /* @__PURE__ */ React.createElement(ContactForm, {
+  }, /* @__PURE__ */ React.createElement("h2", null, "Hi, my name is Courtney Zboncak."), /* @__PURE__ */ React.createElement("p", null, "I'm here to make sure your work looks its best."), /* @__PURE__ */ React.createElement("p", null, "Whether your work needs copyediting, proofreading, or indexing, I can help. Maybe you need help researching a topic? I can do that, too."), /* @__PURE__ */ React.createElement("p", null, "I specialize in the subjects of biblical & theological studies, with a B.A. from Wheaton College and a M.A. in Theology from Biola University's Talbot School of Theology."), /* @__PURE__ */ React.createElement("p", null, "I have several years of experience working with biblical scholars in higher education, and I bring a detailed eye to written work at any stage of the publication process."), /* @__PURE__ */ React.createElement("p", null, "Contact me for pricing and details.")), /* @__PURE__ */ React.createElement("section", null, /* @__PURE__ */ React.createElement(ContactForm, {
     transitionState: transition.state
-  })));
+  })), /* @__PURE__ */ React.createElement("footer", null, /* @__PURE__ */ React.createElement("a", {
+    href: "https://www.linkedin.com/in/courtney-zboncak-721431206/",
+    target: "_blank",
+    rel: "noreferrer"
+  }, /* @__PURE__ */ React.createElement("img", {
+    src: LI_In_Bug_default,
+    alt: "Linked In Logo"
+  })), /* @__PURE__ */ React.createElement("a", {
+    href: "mailto:courtney@czeditorial.com"
+  }, /* @__PURE__ */ React.createElement("img", {
+    src: email_default,
+    alt: "Email Icon"
+  }))));
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
 init_react();
-var assets_manifest_default = { "version": "a9cf30d5", "entry": { "module": "/build/entry.client-F4X7NALO.js", "imports": ["/build/_shared/chunk-SXNYENQH.js", "/build/_shared/chunk-6QOPOAPS.js", "/build/_shared/chunk-6BO74FWO.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-A7XXXWTP.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/[sitemap.xml]": { "id": "routes/[sitemap.xml]", "parentId": "root", "path": "sitemap.xml", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/[sitemap.xml]-WA7EUYXI.js", "imports": void 0, "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-GH2RF6HW.js", "imports": void 0, "hasAction": true, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-A9CF30D5.js" };
+var assets_manifest_default = { "version": "2e9db00f", "entry": { "module": "/build/entry.client-LE2DIIAM.js", "imports": ["/build/_shared/chunk-SXNYENQH.js", "/build/_shared/chunk-ERMYNWJS.js", "/build/_shared/chunk-6BO74FWO.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-ILCSDJUS.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/[sitemap.xml]": { "id": "routes/[sitemap.xml]", "parentId": "root", "path": "sitemap.xml", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/[sitemap.xml]-WA7EUYXI.js", "imports": void 0, "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-WERTG5J4.js", "imports": void 0, "hasAction": true, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-2E9DB00F.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var entry = { module: entry_server_exports };

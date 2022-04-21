@@ -11,6 +11,8 @@ import { useEffect, useState } from "react";
 import Notification from "~/components/Notification";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import { Skill } from "~/components/Skill";
+import LILogo from "~/images/LI-In-Bug.png";
+import emailIcon from "~/images/email.png";
 
 export const links: LinksFunction = () => {
   return [
@@ -118,20 +120,39 @@ export default function Index() {
         }}
       </ReactVisibilitySensor>
       <section className="about-me" id="about">
-        <h2>Hi, my name is Courtney</h2>
-        <p>And I'm here to make sure your work looks its best.</p>
+        <h2>Hi, my name is Courtney Zboncak.</h2>
+        <p>I'm here to make sure your work looks its best.</p>
         <p>
-          I have a B.S. in Biblical & Theological Studies from Wheaton College
-          and a M.A. in Theology from Talbot School of Theology.
+          Whether your work needs copyediting, proofreading, or indexing, I can
+          help. Maybe you need help researching a topic? I can do that, too.
         </p>
         <p>
-          I have years of experience working with biblical scholars from working
-          in the Ph.D. office at Wheaton College.
+          I specialize in the subjects of biblical & theological studies, with a
+          B.A. from Wheaton College and a M.A. in Theology from Biola
+          University's Talbot School of Theology.
         </p>
+        <p>
+          I have several years of experience working with biblical scholars in
+          higher education, and I bring a detailed eye to written work at any
+          stage of the publication process.
+        </p>
+        <p>Contact me for pricing and details.</p>
       </section>
       <section>
         <ContactForm transitionState={transition.state} />
       </section>
+      <footer>
+        <a
+          href="https://www.linkedin.com/in/courtney-zboncak-721431206/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={LILogo} alt="Linked In Logo" />
+        </a>
+        <a href="mailto:courtney@czeditorial.com">
+          <img src={emailIcon} alt="Email Icon" />
+        </a>
+      </footer>
     </main>
   );
 }

@@ -12,7 +12,7 @@
   font-family: var(--lora-font);
   font-size: xx-large;
   margin: 300px auto;
-  padding-top: 40vh;
+  padding-top: 30vh;
 }
 
 .about-me {
@@ -21,7 +21,7 @@
   margin: 300px auto;
   font-family: var(--lora-font);
   line-height: 2rem;
-  padding-top: 40vh;
+  padding-top: 30vh;
 }
 
 .contact-form {
@@ -128,6 +128,10 @@
   .skills {
     grid-template-columns: auto;
   }
+
+  .about-me {
+    padding-top: 20vh;
+  }
 }
 
 @keyframes flash {
@@ -145,4 +149,15 @@
 .typing::after {
   content: "|";
   animation: flash cubic-bezier(0, 1.57, 0, 0.98) 0.7s infinite;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+footer img {
+  height: 70px;
 }
