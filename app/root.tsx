@@ -7,7 +7,7 @@ import {
   ScrollRestoration
 } from "remix";
 import type { MetaFunction } from "remix";
-import * as gtag from "~/utils/gtags.client";
+import { GA_TRACKING_ID } from "~/utils/gtags.client";
 
 export const meta: MetaFunction = () => {
   return {
@@ -49,7 +49,7 @@ export default function App() {
           <>
             <script
               async
-              src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
             />
             <script
               async
@@ -59,7 +59,7 @@ export default function App() {
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', '${gtag.GA_TRACKING_ID}', {
+                gtag('config', '${GA_TRACKING_ID}', {
                   page_path: window.location.pathname,
                 });
               `
