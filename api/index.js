@@ -335,14 +335,6 @@ var require_remix = __commonJS({
   }
 });
 
-// empty-module:~/utils/gtags.client
-var require_gtags = __commonJS({
-  "empty-module:~/utils/gtags.client"(exports, module2) {
-    init_react();
-    module2.exports = {};
-  }
-});
-
 // <stdin>
 var stdin_exports = {};
 __export(stdin_exports, {
@@ -383,7 +375,6 @@ __export(root_exports, {
 });
 init_react();
 var import_remix2 = __toESM(require_remix());
-var import_gtags = __toESM(require_gtags());
 var meta = () => {
   return {
     title: "CZ Editorial - Freelance Copyeditor and Proofreader",
@@ -411,9 +402,9 @@ function App() {
     name: "theme-color",
     content: "#d9e8e6",
     media: "(prefers-color-scheme: light)"
-  }), /* @__PURE__ */ React.createElement(import_remix2.Meta, null), /* @__PURE__ */ React.createElement(import_remix2.Links, null)), /* @__PURE__ */ React.createElement("body", null, true ? null : /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("script", {
+  }), /* @__PURE__ */ React.createElement(import_remix2.Meta, null), /* @__PURE__ */ React.createElement(import_remix2.Links, null), true ? null : /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("script", {
     async: true,
-    src: `https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`
+    src: `https://www.googletagmanager.com/gtag/js?id=UA-226836789-1`
   }), /* @__PURE__ */ React.createElement("script", {
     async: true,
     id: "gtag-init",
@@ -422,12 +413,10 @@ function App() {
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', '${GA_TRACKING_ID}', {
-                  page_path: window.location.pathname,
-                });
+                gtag('config', 'UA-226836789-1');
               `
     }
-  })), /* @__PURE__ */ React.createElement(import_remix2.Outlet, null), /* @__PURE__ */ React.createElement(import_remix2.ScrollRestoration, null), /* @__PURE__ */ React.createElement(import_remix2.Scripts, null), /* @__PURE__ */ React.createElement(import_remix2.LiveReload, null)));
+  }))), /* @__PURE__ */ React.createElement("body", null, /* @__PURE__ */ React.createElement(import_remix2.Outlet, null), /* @__PURE__ */ React.createElement(import_remix2.ScrollRestoration, null), /* @__PURE__ */ React.createElement(import_remix2.Scripts, null), /* @__PURE__ */ React.createElement(import_remix2.LiveReload, null)));
 }
 
 // route:/Users/zacharyzboncak/Desktop/Projects/cz-editorial/app/routes/[sitemap.xml].tsx
@@ -810,7 +799,7 @@ function Index() {
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
 init_react();
-var assets_manifest_default = { "version": "86d2ee12", "entry": { "module": "/build/entry.client-LE2DIIAM.js", "imports": ["/build/_shared/chunk-SXNYENQH.js", "/build/_shared/chunk-ERMYNWJS.js", "/build/_shared/chunk-6BO74FWO.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-LO323CA5.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/[sitemap.xml]": { "id": "routes/[sitemap.xml]", "parentId": "root", "path": "sitemap.xml", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/[sitemap.xml]-WA7EUYXI.js", "imports": void 0, "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-WERTG5J4.js", "imports": void 0, "hasAction": true, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-86D2EE12.js" };
+var assets_manifest_default = { "version": "5f09eb84", "entry": { "module": "/build/entry.client-LE2DIIAM.js", "imports": ["/build/_shared/chunk-SXNYENQH.js", "/build/_shared/chunk-ERMYNWJS.js", "/build/_shared/chunk-6BO74FWO.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-6477E7CG.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/[sitemap.xml]": { "id": "routes/[sitemap.xml]", "parentId": "root", "path": "sitemap.xml", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/[sitemap.xml]-WA7EUYXI.js", "imports": void 0, "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-WERTG5J4.js", "imports": void 0, "hasAction": true, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-5F09EB84.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var entry = { module: entry_server_exports };
