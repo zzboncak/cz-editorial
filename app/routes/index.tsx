@@ -84,6 +84,12 @@ export default function Index() {
   useEffect(() => {
     if (data && data.accepted) {
       setDisplayNotification(true);
+    } else if (data && data.emailNotValid) {
+      setDisplayNotification(true);
+      setNotificationMessage({
+        type: "error",
+        message: "Please enter a valid email address."
+      });
     } else if (data && !data.accepted) {
       setDisplayNotification(true);
       setNotificationMessage({

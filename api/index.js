@@ -386,7 +386,7 @@ function App() {
   console.log(`%c If you're reading this, you probably know a thing or two about web development. 
     My name is Zack Zboncak, and I built this site for my wife, who is a boss copyeditor and proofreader. 
     If you ever want to talk web development, or have any web development needs, feel free to reach out to me at zachary.zboncak@gmail.com.
-    You can find me on Twitter at @zzdevelops, and on GitHub at https://github.com/zzboncak.`, "line-height: 1.5; font-size: 16px;");
+    You can find me on Twitter at @zzdevelops, and on GitHub at https://github.com/zzboncak.`, "line-height: 1.5; font-size: 14px;");
   return /* @__PURE__ */ React.createElement("html", {
     lang: "en"
   }, /* @__PURE__ */ React.createElement("head", null, /* @__PURE__ */ React.createElement("meta", {
@@ -536,6 +536,17 @@ function generateEmailHtml(email, messageBody) {
   `;
 }
 async function sendEmail(options) {
+  const results = await fetch(`https://${process.env.XRapidAPIHost}/verify/v1?email=${(0, import_xss.default)(options.email)}`, {
+    headers: {
+      "X-RapidAPI-Host": `${process.env.XRapidAPIHost}`,
+      "X-RapidAPI-Key": `${process.env.XRapidAPIKey}`
+    }
+  }).then((data) => {
+    if (!data.ok) {
+      throw new Error(`${data.status} ${data.statusText}`);
+    }
+    return data.json();
+  }).then((data) => data);
   const testAccount = await import_nodemailer.default.createTestAccount();
   const account = true ? import_nodemailer.default.createTransport({
     host: "smtp.ethereal.email",
@@ -554,6 +565,8 @@ async function sendEmail(options) {
       pass: process.env.SMTP_PASS
     }
   });
+  if (results.status !== "valid")
+    return { emailNotValid: true };
   return await account.sendMail({
     to: process.env.SMTP_USER,
     from: process.env.SMTP_USER,
@@ -742,6 +755,12 @@ function Index() {
   (0, import_react4.useEffect)(() => {
     if (data && data.accepted) {
       setDisplayNotification(true);
+    } else if (data && data.emailNotValid) {
+      setDisplayNotification(true);
+      setNotificationMessage({
+        type: "error",
+        message: "Please enter a valid email address."
+      });
     } else if (data && !data.accepted) {
       setDisplayNotification(true);
       setNotificationMessage({
@@ -799,7 +818,7 @@ function Index() {
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
 init_react();
-var assets_manifest_default = { "version": "5f09eb84", "entry": { "module": "/build/entry.client-LE2DIIAM.js", "imports": ["/build/_shared/chunk-SXNYENQH.js", "/build/_shared/chunk-ERMYNWJS.js", "/build/_shared/chunk-6BO74FWO.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-6477E7CG.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/[sitemap.xml]": { "id": "routes/[sitemap.xml]", "parentId": "root", "path": "sitemap.xml", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/[sitemap.xml]-WA7EUYXI.js", "imports": void 0, "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-WERTG5J4.js", "imports": void 0, "hasAction": true, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-5F09EB84.js" };
+var assets_manifest_default = { "version": "ff996c56", "entry": { "module": "/build/entry.client-TA4CFPU5.js", "imports": ["/build/_shared/chunk-RUFXSJRN.js", "/build/_shared/chunk-ERMYNWJS.js", "/build/_shared/chunk-6BO74FWO.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-NKQPTIAF.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/[sitemap.xml]": { "id": "routes/[sitemap.xml]", "parentId": "root", "path": "sitemap.xml", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/[sitemap.xml]-WA7EUYXI.js", "imports": void 0, "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-NDCZ2ERU.js", "imports": void 0, "hasAction": true, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-FF996C56.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var entry = { module: entry_server_exports };
