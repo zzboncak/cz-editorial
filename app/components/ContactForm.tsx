@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Form } from "remix";
 
 export default function ContactForm({
-  transitionState,
+  transitionState
 }: {
   transitionState: "submitting" | "loading" | "idle";
 }) {
@@ -24,6 +24,7 @@ export default function ContactForm({
         placeholder="Your Email"
         required
       />
+      <input type="text" name="secrets" id="secrets" placeholder="Hello bots" />
       <textarea
         name="messageBody"
         id="message-body"

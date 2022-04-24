@@ -74,6 +74,10 @@
   border: 1px black dotted;
 }
 
+.contact-form #secrets {
+  display: none;
+}
+
 .notification-container {
   position: fixed;
   width: 100vw;

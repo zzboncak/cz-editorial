@@ -478,7 +478,7 @@ var global_default = "/build/_assets/global-AAQA4Q6G.css";
 var topbar_default = "/build/_assets/topbar-ZZJL7OFN.css";
 
 // app/styles/landing.css
-var landing_default = "/build/_assets/landing-KULQEQKV.css";
+var landing_default = "/build/_assets/landing-KN42APZF.css";
 
 // route:/Users/zacharyzboncak/Desktop/Projects/cz-editorial/app/routes/index.tsx
 var import_remix4 = __toESM(require_remix());
@@ -509,6 +509,11 @@ function ContactForm({
     id: "email",
     placeholder: "Your Email",
     required: true
+  }), /* @__PURE__ */ React.createElement("input", {
+    type: "text",
+    name: "secrets",
+    id: "secrets",
+    placeholder: "Hello bots"
   }), /* @__PURE__ */ React.createElement("textarea", {
     name: "messageBody",
     id: "message-body",
@@ -734,14 +739,19 @@ var action = async ({ request }) => {
   let body = await request.formData();
   const email = body.get("email");
   const messageBody = body.get("messageBody");
-  try {
-    const result = await sendEmail({
-      email,
-      messageBody
-    });
-    return result;
-  } catch (error) {
-    return error;
+  const secrets = body.get("secrets");
+  if (!secrets) {
+    try {
+      const result = await sendEmail({
+        email,
+        messageBody
+      });
+      return result;
+    } catch (error) {
+      return error;
+    }
+  } else {
+    return null;
   }
 };
 function Index() {
@@ -818,7 +828,7 @@ function Index() {
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
 init_react();
-var assets_manifest_default = { "version": "ff996c56", "entry": { "module": "/build/entry.client-TA4CFPU5.js", "imports": ["/build/_shared/chunk-RUFXSJRN.js", "/build/_shared/chunk-ERMYNWJS.js", "/build/_shared/chunk-6BO74FWO.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-NKQPTIAF.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/[sitemap.xml]": { "id": "routes/[sitemap.xml]", "parentId": "root", "path": "sitemap.xml", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/[sitemap.xml]-WA7EUYXI.js", "imports": void 0, "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-NDCZ2ERU.js", "imports": void 0, "hasAction": true, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-FF996C56.js" };
+var assets_manifest_default = { "version": "707b9e0f", "entry": { "module": "/build/entry.client-LE2DIIAM.js", "imports": ["/build/_shared/chunk-SXNYENQH.js", "/build/_shared/chunk-ERMYNWJS.js", "/build/_shared/chunk-6BO74FWO.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-NKQPTIAF.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/[sitemap.xml]": { "id": "routes/[sitemap.xml]", "parentId": "root", "path": "sitemap.xml", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/[sitemap.xml]-WA7EUYXI.js", "imports": void 0, "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-6GPYYAZX.js", "imports": void 0, "hasAction": true, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-707B9E0F.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var entry = { module: entry_server_exports };

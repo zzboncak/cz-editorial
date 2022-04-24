@@ -56,14 +56,19 @@ export const action: ActionFunction = async ({ request }) => {
   let body = await request.formData();
   const email = body.get("email");
   const messageBody = body.get("messageBody");
-  try {
-    const result = await sendEmail({
-      email: email as string,
-      messageBody: messageBody as string
-    });
-    return result;
-  } catch (error) {
-    return error;
+  const secrets = body.get("secrets");
+  if (!secrets) {
+    try {
+      const result = await sendEmail({
+        email: email as string,
+        messageBody: messageBody as string
+      });
+      return result;
+    } catch (error) {
+      return error;
+    }
+  } else {
+    return null;
   }
 };
 
